@@ -1,8 +1,12 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import React, { Component, Fragment } from 'react';
+import {
+  View, Text, ScrollView, ActivityIndicator,
+} from 'react-native';
 import { getConstructorStandings, getDriverStandings } from '../../services/f1';
-
-// import styles from './styles';
+import DriversTable from './DriversTable';
+import TeamsTable from './TeamsTable';
+// import Routes from './routes';
+import styles from './styles';
 
 export default class Standings extends Component {
   state = {
@@ -28,22 +32,23 @@ export default class Standings extends Component {
   render() {
     const { loading, drivers, constructors } = this.state;
     return (
-      <View>
+      <Fragment>
         {loading ? (
-          <Text>Carregando</Text>
-        ) : (
-          <View>
-            {drivers.map(el => (
-              <Text key={el.Driver.driverId}>{`${el.Driver.driverId} - ${el.points} pts`}</Text>
-            ))}
-            {constructors.map(el => (
-              <Text key={el.Constructor.constructorId}>
-                {`${el.Constructor.constructorId} - ${el.points} pts`}
-              </Text>
-            ))}
+          <View style={styles.loading}>
+            <ActivityIndicator size={80} color="#0ca597" />
           </View>
+        ) : (
+          <ScrollView style={styles.container}>
+            <View>
+              <Text style={styles.headers}> Drivers standings </Text>
+              <DriversTable drivers={drivers} />
+
+              <Text style={styles.headers}> Constructors standings </Text>
+              <TeamsTable teams={constructors} />
+            </View>
+          </ScrollView>
         )}
-      </View>
+      </Fragment>
     );
   }
 }
