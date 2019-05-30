@@ -13,7 +13,7 @@ export default ({ videoId }) => (
     }}
   >
     <YouTube
-      apiKey=""
+      apiKey="AIzaSyCDCVpV_jCrB4IQV9pGkGJ06IslDmMfoaM"
       videoId={videoId} // The YouTube video ID
       style={{ alignSelf: 'stretch', height: 300 }}
     />

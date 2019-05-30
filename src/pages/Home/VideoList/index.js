@@ -18,7 +18,10 @@ export default class VideoList extends Component {
   }
 
   searchYT = () => {
-    YTSearch({ key: '', term: 'formula 1 mercedes best moments' }, this.videosToState);
+    YTSearch(
+      { key: 'AIzaSyCDCVpV_jCrB4IQV9pGkGJ06IslDmMfoaM', term: 'formula 1 mercedes best moments' },
+      this.videosToState,
+    );
   };
 
   videosToState = (videos) => {

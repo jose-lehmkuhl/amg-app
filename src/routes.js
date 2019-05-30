@@ -3,12 +3,14 @@ import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
 import Home from './pages/Home';
 import News from './pages/News';
 import Standings from './pages/Standings';
+import Races from './pages/Races';
 
 const Routes = createAppContainer(
   createBottomTabNavigator(
     {
       Home,
       News,
+      Races,
       Standings,
     },
     {
