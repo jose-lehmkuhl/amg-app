@@ -7,9 +7,9 @@ export default ({ videoId }) => (
   <View
     style={{
       alignSelf: 'stretch',
-      height: 300,
-      paddingTop: 30,
-      paddingBottom: 30,
+      height: 280,
+      paddingTop: 10,
+      marginBottom: 40,
     }}
   >
     <YouTube

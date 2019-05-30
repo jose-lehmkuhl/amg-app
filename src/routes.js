@@ -12,6 +12,7 @@ const Routes = createAppContainer(
       Standings,
     },
     {
+      resetOnBlur: true,
       tabBarOptions: {
         activeTintColor: '#fff',
         inactiveTintColor: '#ccc',
