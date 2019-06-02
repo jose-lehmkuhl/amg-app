@@ -51,7 +51,6 @@ export default class Race extends PureComponent {
           style={{
             display: 'flex',
             flexDirection: 'row',
-            alignCcontent: 'space-between',
           }}
         >
           <Image
