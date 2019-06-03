@@ -1,8 +1,7 @@
 import React from 'react';
 
 import {
-  View, Text, Dimensions,
-  Image, ScrollView,
+  View, Text, Dimensions, Image, ScrollView,
 } from 'react-native';
 
 import drivers from './drivers';
@@ -72,15 +71,17 @@ function renderDriver(driver) {
 function renderInfo(item) {
   return (
     <View
+      key={item.title}
       style={{
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
       }}
     >
-      <Text style={{
-        fontWeight: 'bold',
-      }}
+      <Text
+        style={{
+          fontWeight: 'bold',
+        }}
       >
         {item.title}
       </Text>

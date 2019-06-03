@@ -1,8 +1,14 @@
 import React, { PureComponent } from 'react';
 
 import {
-  View, Text, FlatList, Image, TouchableHighlight,
-  Dimensions, ScrollView, BackHandler,
+  View,
+  Text,
+  FlatList,
+  Image,
+  TouchableHighlight,
+  Dimensions,
+  ScrollView,
+  BackHandler,
 } from 'react-native';
 
 import news from './content';
@@ -18,9 +24,9 @@ export default class Race extends PureComponent {
   }
 
   componentDidMount() {
-    const { selected } = this.state;
-
     this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+      const { selected } = this.state;
+
       if (selected) {
         this.setState({
           selected: undefined,
@@ -66,7 +72,7 @@ export default class Race extends PureComponent {
               numberOfLines={2}
               ellipsizeMode="tail"
               style={{
-                marginRight: 140 + 15,   // desconta tamanho da imagem
+                marginRight: 140 + 15, // desconta tamanho da imagem
                 fontWeight: 'bold',
               }}
             >
@@ -76,7 +82,7 @@ export default class Race extends PureComponent {
               numberOfLines={4}
               ellipsizeMode="tail"
               style={{
-                marginRight: 140 + 15,   // desconta tamanho da imagem
+                marginRight: 140 + 15, // desconta tamanho da imagem
               }}
             >
               {item.content}
@@ -132,6 +138,7 @@ export default class Race extends PureComponent {
           <FlatList
             data={news}
             renderItem={({ item }) => this.renderItem(item)}
+            keyExtractor={(item, index) => index.toString()}
           />
         </View>
       );
